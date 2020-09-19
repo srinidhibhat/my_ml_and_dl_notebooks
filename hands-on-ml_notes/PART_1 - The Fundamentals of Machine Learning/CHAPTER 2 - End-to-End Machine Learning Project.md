@@ -21,7 +21,7 @@ Note: The correlation coefficient only measures linear correlations (“if x goe
 
 ### Prepare the Data for Machine Learning Algorithms
 - Scikit-Learn provides a handy class to take care of missing values: Imputer. First, you need to create an Imputer instance, specifying that you want to replace each attribute’s missing values with the median of that attribute. Then you can fit the imputer instance to the training data using the fit() method. 
-- Scikit-Learn Design principles:
+- **Scikit-Learn Design principles**:
 	1. Consistency: All objects share a consistent and simple interface:  
 		(i) Estimators: Any object that can estimate some parameters based on a dataset is called an estimator (e.g., an imputer is an estimator). The estimation itself is performed by the fit() method, and it takes only a dataset as a parameter. Any other parameter needed to guide the estimation process is considered a hyperparameter (such as an imputer’s strategy), and it must be set as an instance variable.  
 		(ii) Transformers: Some estimators (such as an imputer) can also transform a dataset; these are called transformers. Once again, the API is quite simple: the transformation is performed by the transform() method with the dataset to transform as a parameter. It returns the transformed dataset. This transformation generally relies on the learned parameters, as is the case for an imputer. All transformers also have a convenience method called fit_transform().  
@@ -46,7 +46,7 @@ Note: The correlation coefficient only measures linear correlations (“if x goe
 - Scikit-Learn also provides a 'FeatureUnion' class for combining different transformations (like numerical, categorical) into a single pipeline.
 - Building a model on top of many other models is called Ensemble Learning, and it is often a great way to push ML algorithms even further.
 - You should save every model you experiment with, so you can come back easily to any model you want. Make sure you save both the hyperparameters and the trained parameters, as well as the cross-validation scores and perhaps the actual predictions as well. This will allow you to easily compare scores across model types, and compare the types of errors they make.
-- Fine-Tuning Your Model:
+- **Fine-Tuning Your Model**:
     1. Grid Search: One way to do that would be to fiddle with the hyperparameters manually, until you find a great combination of hyperparameter values. Scikit-Learn provides 'GridSearchCV' API for this purpose. All you need to do is tell it which hyperparameters you want it to experiment with, and what values to try out, and it will evaluate all the possible combinations of hyperparameter values, using cross-validation.
     2. Randomized Search: The grid search approach is fine when you are exploring relatively few combinations, but when the hyperparameter search space is large, it is often preferable to use RandomizedSearchCV instead. This class can be used in much the same way as the GridSearchCV class,  but instead of trying out all possible combinations, it evaluates a given number of random  combinations by selecting a random value for each hyperparameter at every iteration. 
     3. Ensemble Methods: Another way to fine-tune your system is to try to combine the models that perform best. The group (or “ensemble”) will often perform better than the best individual

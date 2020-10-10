@@ -6,7 +6,7 @@
 - The most important building block of a CNN is the convolutional layer: neurons in the first convolutional layer are not connected to every single pixel in the input image (like they were in traditional neural networks), but only to pixels in their receptive fields. In turn, each neuron in the second convolutional layer is connected only to neurons located within a small rectangle in the first layer. 
 - This architecture allows the network to concentrate on low-level features in the first hidden layer, then assemble them into higher-level features in the next hidden layer, and so on. This hierarchical structure is common in real-world images, which is one of the reasons why CNNs work so well for image recognition.
 - A neuron located in row `i`, column `j` of a given layer is connected to the outputs of the neurons in the previous layer located in rows `i` to `i+fh–1`, columns `j` to `j+fw–1`, where *fh* and *fw* are the height and width of the receptive field. 
-- In order for a layer to have the same height and width as the previous layer, it is common to add zeros around the inputs, as shown in the diagram. This is called *zero padding*.
+- In order for a layer to have the same height and width as the previous layer, it is common to add zeros around the inputs. This is called *zero padding*.
 - It is also possible to connect a large input layer to a much smaller layer by spacing out the receptive fields. The distance between two consecutive receptive fields is called the *stride*.  
 
 #### Filters

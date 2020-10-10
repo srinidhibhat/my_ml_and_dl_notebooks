@@ -11,7 +11,7 @@
 - In short, with this activation function and this initialization scheme, the variance of the outputs of each layer is much greater than the variance of its inputs. Going forward in the network, the variance keeps increasing after each layer until the activation function saturates at the top layers. This is actually made worse by the fact that the logistic function has a mean of 0.5, not 0.  
 
 #### Xavier and He initialization
-- An initialization strategy called **Xavier initialization** can be used alleviate this issue. The idea is this: We need the signal to flow properly in both directions: in the forward direction when making predictions, and in the reverse direction when backpropagating gradients. We don’t want the signal to die out, nor do we want it to explode and saturate. For the signal to flow properly, the authors argue that we need the variance of the outputs of each layer to be equal to the variance of its inputs,2 and we also need the gradients to have equal variance before and after flowing through a layer in the reverse direction. This initialization strategy for the ReLU activation function (and its variants), is sometimes called **He initialization**.  
+- An initialization strategy called **Xavier initialization** can be used alleviate this issue. The idea is this: We need the signal to flow properly in both directions: in the forward direction when making predictions, and in the reverse direction when backpropagating gradients. We don’t want the signal to die out, nor do we want it to explode and saturate. For the signal to flow properly, the authors argue that we need the variance of the outputs of each layer to be equal to the variance of its inputs, and we also need the gradients to have equal variance before and after flowing through a layer in the reverse direction. This initialization strategy for the ReLU activation function (and its variants), is sometimes called **He initialization**.  
 
 #### A look at different Activation functions
 - Initially most people had assumed that sigmoid activation functions must be an excellent choice. But it turns out that other activation functions behave much better in deep neural networks, in particular the ReLU activation function, mostly because it does not saturate for positive values (and also because it is quite fast to compute). 
@@ -76,7 +76,8 @@
 
 #### Adam Optimization
 - Adam, which stands for adaptive moment estimation, combines the ideas of Momentum optimization and RMSProp: just like Momentum optimization it keeps track of an exponentially decaying average of past gradients, and just like RMSProp it keeps track of an exponentially decaying average of past squared gradients
-- **The conclusion is that you should almost always use Adam optimization.**
+- **The conclusion is that you should almost always use Adam optimization.**  
+**Note:** Check this <a href="https://medium.com/analytics-vidhya/this-blog-post-aims-at-explaining-the-behavior-of-different-algorithms-for-optimizing-gradient-46159a97a8c1">link</a> for a detailed explanation comparing all the above discussed optimizers.
 
 ### Learning Rate Scheduling
 - Finding a good learning rate can be tricky. If you set it way too high, training may actually diverge. If you set it too low, training will eventually converge to the optimum, but it will take a very long time. If you set it slightly too high, it will make progress very quickly at first, but it will end up dancing around the optimum, never settling down. 

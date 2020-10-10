@@ -112,7 +112,8 @@
 
 
 ### Practical Guidelines
-- The configuration in below table will work fine in most cases.
+- The configuration in below table will work fine in most cases:  
+
 | Parameter | Default value |
 | :---------------- | :--------------- |
 | Initialization | He initialization |
@@ -120,7 +121,7 @@
 | Normalization | Batch Normalization | 
 | Regularization | Dropout |
 | Optimizer | Adam |
-| Learning rate schedule | None |
+| Learning rate schedule | None |  
 
 - This default configuration may need to be tweaked:
     - If you can’t find a good learning rate (convergence was too slow, so you increased the training rate, and now convergence is fast but the network’s accuracy is suboptimal), then you can try adding a learning schedule such as exponential decay.

@@ -9,6 +9,10 @@
 - The receiver operating characteristic (ROC) curve is another common tool used with binary classifiers. It is very similar to the precision/recall curve, but instead of plotting precision versus recall, the ROC curve plots the true positive rate (another name for recall) against the false positive rate. 
 - Since the ROC curve is so similar to the precision/recall (or PR) curve, you may wonder how to decide which one to use. As a rule of thumb, you should prefer the PR curve whenever the positive class is rare or when you care more about the false positives than the false negatives, and the ROC curve otherwise.
 
-**Multilabel Classification**: In some cases you may want your classifier to output multiple classes for each instance. Such a classification system that outputs multiple binary labels is called a multilabel classification system.  
+**Multiclass classification:** Classification task with more than two classes. Each sample can only be labelled as one class.
 
-**Multioutput Classification**: It is simply a generalization of multilabel classification where each label can be multiclass (i.e., it can have more than two possible values).
+**Multilabel Classification:** In some cases you may want your classifier to output multiple classes for each instance. Such a classification system that outputs multiple binary labels is called a multilabel classification system. This can be thought of as predicting properties of a sample that are not mutually exclusive.  
+
+**Multioutput regression:** predicts multiple numerical properties for each sample. Each property is a numerical variable and the number of properties to be predicted for each sample is greater than or equal to 2.  
+
+**Multioutput Classification:** It is simply a generalization of multilabel classification where each label can be multiclass (i.e., it can have more than two possible values).

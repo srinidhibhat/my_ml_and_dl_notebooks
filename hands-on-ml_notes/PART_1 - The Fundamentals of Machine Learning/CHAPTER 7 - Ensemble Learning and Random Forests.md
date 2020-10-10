@@ -33,6 +33,6 @@
 
 ### Stacking
 - It is based on a simple idea: instead of using trivial functions (such as hard voting) to aggregate the predictions of all predictors in an ensemble, why don’t we train a model to perform this aggregation?
-- Example: Consider performing a regression task on a new instance. Each of the predictors predicts a different value, and then the final predictor called a blender, or a meta learner) takes these predictions as inputs and makes the final prediction.
+- Example: Consider performing a regression task on a new instance. Each of the predictors predicts a different value, and then the final predictor called a blender, (or a meta learner) takes these predictions as inputs and makes the final prediction.
 - The trick is to split the training set into three subsets: the first one is used to train the first layer, the second one is used to create the training set used to train the second layer (using predictions made by the predictors of the first layer), and the third one is used to create the training set to train the third layer (using predictions made by the predictors of the second layer). Once this is done, we can make a prediction for a new instance by going through each layer sequentially
 
